@@ -1,0 +1,246 @@
+#hero {
+  min-height: 100dvh;
+
+  & .hero-top {
+    height: 65dvh;
+    padding: 1.25rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: url(../assets/images/hero-background.png) no-repeat
+        center/cover;
+      animation: fadeIn 2s ease-in;
+    }
+
+    & h1 {
+      text-align: center;
+      margin-top: 3rem;
+      animation: fadeIn 2s ease-in forwards;
+    }
+
+    & p {
+      text-align: center;
+      margin-top: 1rem;
+      opacity: 0;
+      animation: fadeIn 1.5s 500ms ease-in forwards;
+    }
+  }
+
+  & header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    & a {
+      text-decoration: none;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background-color: var(--pink-dark);
+      font: 700 0.875rem var(--font-family);
+      color: var(--text-title);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 150px;
+        height: 150px;
+        background-color: var(--pink-base);
+        border-radius: 50%;
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 700ms ease, opacity 600ms ease;
+        z-index: -1;
+      }
+
+      &:hover::after {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(4);
+      }
+    }
+  }
+
+  & .hero-bottom {
+    height: 35dvh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-inline: 1.25rem;
+
+    & p {
+      font-size: 1rem;
+      padding-block: 1.25rem;
+      position: relative;
+
+      & strong {
+        font-weight: 700;
+        color: var(--blue-light);
+      }
+
+      & img {
+        width: 2.5rem;
+        height: 2.5rem;
+        position: absolute;
+      }
+
+      & img[src*="book"] {
+        top: -20%;
+        right: 20%;
+        rotate: 15deg;
+      }
+
+      & img[src*="ouija"] {
+        bottom: -5%;
+        left: -2%;
+        rotate: -30deg;
+        height: 2rem;
+        width: 2rem;
+      }
+
+      & img[src*="ball"] {
+        bottom: -10%;
+        right: 0;
+        rotate: 15deg;
+      }
+    }
+  }
+
+  @media screen and (width >= 80rem) {
+    & .hero-top {
+      height: 100dvh;
+      padding-top: 3.5rem;
+
+      & h1 {
+        max-width: 41rem;
+        margin-top: 10.25rem;
+        margin-inline: auto;
+      }
+
+      & p {
+        max-width: 41rem;
+        margin-top: 2rem;
+        margin-inline: auto;
+      }
+    }
+
+    & header {
+      max-width: 70rem;
+      margin-inline: auto;
+    }
+
+    & .hero-bottom {
+      height: 65dvh;
+      justify-content: center;
+
+      & p {
+        font: var(--subtitle);
+        max-width: 75rem;
+
+        & strong,
+        & span {
+          color: rgba(255, 255, 255, 0.5);
+          transition: color 500ms ease;
+        }
+
+        & img {
+          opacity: 0;
+          transform: scale(0);
+          transition: transform 500ms ease, opacity 500ms ease;
+        }
+
+        &:hover {
+          & span.first {
+            color: var(--text-body);
+          }
+
+          & span.first strong {
+            color: var(--blue-light);
+          }
+
+          & span.second {
+            color: var(--text-body);
+            transition-delay: 500ms;
+          }
+
+          & span.second strong {
+            color: var(--blue-light);
+            transition-delay: 500ms;
+          }
+
+          & span.third {
+            color: var(--text-body);
+            transition-delay: 1s;
+          }
+
+          & span.third strong {
+            color: var(--blue-light);
+            transition-delay: 1s;
+          }
+
+          & img[src*="book"] {
+            opacity: 1;
+            transform: scale(1);
+          }
+
+          & img[src*="ouija"] {
+            opacity: 1;
+            transform: scale(1);
+            transition-delay: 500ms;
+          }
+
+          & img[src*="ball"] {
+            opacity: 1;
+            transform: scale(1);
+            transition-delay: 1s;
+          }
+        }
+
+        & img[src*="book"] {
+          width: 5.5rem;
+          height: 5.5rem;
+          top: -40%;
+          right: 50%;
+          rotate: 20deg;
+        }
+
+        & img[src*="ouija"] {
+          width: 5rem;
+          height: 5rem;
+          bottom: -35%;
+          left: 4%;
+          rotate: 99deg;
+        }
+
+        & img[src*="ball"] {
+          width: 4.5rem;
+          height: 4.5rem;
+          bottom: -40%;
+          right: 1%;
+          rotate: -15deg;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
