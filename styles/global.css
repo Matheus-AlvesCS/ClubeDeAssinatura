@@ -58,6 +58,10 @@ h3 {
   font: var(--title-md);
 }
 
+img {
+  max-width: 100%;
+}
+
 .link {
   font: 500 0.875rem var(--font-family);
   text-decoration: none;

@@ -27,20 +27,397 @@
   & > div {
     margin-top: 4rem;
     position: relative;
+    animation-timeline: view();
 
     & span {
       font: 400 0.625rem var(--font-family);
     }
 
-    & > img {
-      width: 9.875rem;
-      height: 13rem;
+    & img[alt*="livro"] {
       display: block;
       margin-inline: auto;
+      width: 9.875rem;
     }
 
-    & > div {
-      position: absolute;
+    & span:nth-child(2),
+    & img:nth-child(3),
+    & span:nth-child(4),
+    & img:nth-child(5),
+    & img:nth-child(6),
+    & span:nth-child(7),
+    & img:nth-child(8),
+    & img:nth-child(9),
+    & img:nth-child(10) {
+      opacity: 0;
+      scale: 0;
+      animation-fill-mode: both;
+      animation-timeline: view();
+      animation-range: 10% 40%;
     }
+
+    & span:nth-child(2) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      animation-name: slideToLeftSpan;
+    }
+
+    & img:nth-child(3) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 5rem;
+      z-index: -1;
+      animation-name: slideToLeftArrow;
+    }
+
+    & span:nth-child(4) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      animation-name: slideToLeftSpan2;
+    }
+
+    & img:nth-child(5) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 2.1875rem;
+      z-index: -1;
+      animation-name: slideToLeftArrow2;
+    }
+
+    & img:nth-child(6) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 4.6875rem;
+      z-index: -1;
+      animation-name: slideToLeftPin;
+    }
+
+    & span:nth-child(7) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      animation-name: slideToRightSpan;
+    }
+
+    & img:nth-child(8) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 3.125rem;
+      z-index: -1;
+      animation-name: slideToRightArrow;
+    }
+
+    & img:nth-child(9) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 3.625rem;
+      height: 11.25rem;
+      z-index: -1;
+      animation-name: slideToRightBookmarkYellow;
+    }
+
+    & img:nth-child(10) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 3.625rem;
+      height: 11.25rem;
+      z-index: -2;
+      animation-name: slideToRightBookmarkPurple;
+    }
+  }
+
+  @media screen and (width >= 80rem) {
+    & > div {
+      margin-top: 10rem;
+
+      & span {
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+
+      & img[alt*="livro"] {
+        width: 29rem;
+      }
+
+      & span:nth-child(2),
+      & img:nth-child(3),
+      & span:nth-child(4),
+      & img:nth-child(5),
+      & img:nth-child(6),
+      & span:nth-child(7),
+      & img:nth-child(8),
+      & img:nth-child(9),
+      & img:nth-child(10) {
+        animation: none;
+        transition: transform 0.5s ease-in-out, rotate 0.5s ease-in-out,
+          opacity 0.5s ease-in-out, scale 0.5s ease-in-out;
+      }
+
+      & span:nth-child(2) {
+        position: absolute;
+        width: initial;
+        z-index: -1;
+      }
+
+      & img:nth-child(3) {
+        position: absolute;
+        width: initial;
+        z-index: -1;
+      }
+
+      & span:nth-child(4) {
+        position: absolute;
+        width: initial;
+        z-index: -1;
+      }
+
+      & img:nth-child(5) {
+        position: absolute;
+        width: initial;
+        z-index: -1;
+      }
+
+      & img:nth-child(6) {
+        position: absolute;
+        width: 13.875rem;
+        z-index: -1;
+      }
+
+      & span:nth-child(7) {
+        position: absolute;
+        width: initial;
+        z-index: -1;
+      }
+
+      & img:nth-child(8) {
+        position: absolute;
+        width: initial;
+        z-index: -1;
+      }
+
+      & img:nth-child(9) {
+        position: absolute;
+        width: 10.75rem;
+        height: 33.5rem;
+        z-index: -1;
+      }
+
+      & img:nth-child(10) {
+        position: absolute;
+        width: 10.75rem;
+        height: 33.5rem;
+        z-index: -2;
+      }
+
+      &:hover {
+        & span:nth-child(2) {
+          transform: translate(-440px, -365px);
+          opacity: 1;
+          scale: 1;
+        }
+
+        & img:nth-child(3) {
+          transform: translate(-385px, -330px);
+          opacity: 1;
+          scale: 1;
+        }
+
+        & span:nth-child(4) {
+          transform: translate(-415px, 0px);
+          opacity: 1;
+          scale: 1;
+        }
+
+        & img:nth-child(5) {
+          transform: translate(-410px, 40px);
+          opacity: 1;
+          scale: 1;
+        }
+
+        & img:nth-child(6) {
+          transform: translate(-380px, 75px);
+          rotate: -8deg;
+          opacity: 1;
+          scale: 1;
+        }
+
+        & span:nth-child(7) {
+          transform: translate(160px, 380px);
+          opacity: 1;
+          scale: 1;
+        }
+
+        & img:nth-child(8) {
+          transform: translate(230px, 215px);
+          opacity: 1;
+          scale: 1;
+        }
+
+        & img:nth-child(9) {
+          transform: translate(85px, -410px);
+          rotate: 12deg;
+          opacity: 1;
+          scale: 1;
+        }
+
+        & img:nth-child(10) {
+          transform: translate(140px, -360px);
+          rotate: 22deg;
+          opacity: 1;
+          scale: 1;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideToLeftSpan {
+  80% {
+    transform: translate(-180px, -135px);
+    scale: 1;
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-175px, -130px);
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes slideToLeftArrow {
+  80% {
+    transform: translate(-150px, -120px);
+    scale: 1;
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-145px, -115px);
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes slideToLeftSpan2 {
+  80% {
+    transform: translate(-165px, -5px);
+    scale: 1;
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-160px, 0px);
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes slideToLeftArrow2 {
+  80% {
+    transform: translate(-145px, 25px);
+    scale: 1;
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-140px, 20px);
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes slideToLeftPin {
+  80% {
+    transform: translate(-135px, 35px);
+    rotate: -9deg;
+    scale: 1;
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-130px, 30px);
+    rotate: -7deg;
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes slideToRightSpan {
+  80% {
+    transform: translate(40px, 130px);
+    scale: 1;
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(35px, 125px);
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes slideToRightArrow {
+  80% {
+    transform: translate(90px, 75px);
+    scale: 1;
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(85px, 70px);
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes slideToRightBookmarkYellow {
+  80% {
+    transform: translate(40px, -145px);
+    rotate: 11deg;
+    scale: 1;
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(35px, -140px);
+    rotate: 11deg;
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes slideToRightBookmarkPurple {
+  80% {
+    transform: translate(55px, -125px);
+    rotate: 22deg;
+    scale: 1;
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(50px, -120px);
+    rotate: 22deg;
+    scale: 1;
+    opacity: 1;
   }
 }
