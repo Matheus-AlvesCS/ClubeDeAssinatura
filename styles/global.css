@@ -68,6 +68,11 @@ img {
   color: var(--blue-light);
 }
 
+.container {
+  max-width: 80rem;
+  margin-inline: auto;
+}
+
 .desktop-only {
   display: none;
 }

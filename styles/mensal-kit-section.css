@@ -1,5 +1,5 @@
 #mensal-kit {
-  padding-block: 3rem;
+  padding-block: 5rem;
 
   & header {
     padding-inline: 1.25rem;
@@ -146,6 +146,8 @@
   }
 
   @media screen and (width >= 80rem) {
+    padding-block: 8rem;
+
     & > div {
       margin-top: 10rem;
 
