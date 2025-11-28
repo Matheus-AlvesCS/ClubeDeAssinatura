@@ -86,6 +86,29 @@
         font: 700 0.875rem var(--font-family);
         width: 100%;
         cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 100px;
+          height: 100px;
+          background-color: var(--pink-base);
+          border-radius: 50%;
+          opacity: 0.5;
+          transform: translate(-50%, -50%) scale(0);
+          z-index: -1;
+          transition: transform 700ms ease, opacity 600ms ease;
+        }
+
+        &:hover::after {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(4);
+        }
       }
 
       &:nth-child(2) {
@@ -100,6 +123,10 @@
 
         & button {
           background-color: var(--blue-dark);
+
+          &::after {
+            background-color: var(--blue-base);
+          }
         }
       }
     }
@@ -136,7 +163,8 @@
 
         & > img {
           position: absolute;
-          top: -12%;
+          top: -50px;
+          left: 20px;
         }
 
         & > svg {

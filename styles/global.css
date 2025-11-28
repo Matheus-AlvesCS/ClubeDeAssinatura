@@ -66,6 +66,10 @@ img {
   font: 500 0.875rem var(--font-family);
   text-decoration: none;
   color: var(--blue-light);
+
+  &:hover {
+    color: var(--text-body);
+  }
 }
 
 .container {

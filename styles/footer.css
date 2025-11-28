@@ -1,0 +1,152 @@
+footer {
+  background: url(../assets/images/book-trace-bg-mobile.png) no-repeat top
+    center/cover;
+  padding: 6.125rem 2rem 2.375rem;
+
+  & .container {
+    display: grid;
+    gap: 2.5rem;
+
+    & > div {
+      text-align: center;
+    }
+  }
+
+  & .social-links {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--shape-stroke);
+
+    & .social-link {
+      padding: 0.5rem;
+      color: none;
+      line-height: 0;
+      border-radius: 999px;
+      transition: background 500ms ease;
+
+      & .social-icon {
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+
+      &:hover {
+        background-color: var(--shape-stroke);
+      }
+
+      &:nth-child(1) {
+        & > .social-icon {
+          background: url(../assets/icons/instagram.svg) no-repeat center;
+        }
+
+        &:hover {
+          & > .social-icon {
+            background-image: url(../assets/icons/instagram-hover.svg);
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        & > .social-icon {
+          background: url(../assets/icons/twitter.svg) no-repeat center;
+        }
+
+        &:hover {
+          & > .social-icon {
+            background-image: url(../assets/icons/twitter-hover.svg);
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        & > .social-icon {
+          background: url(../assets/icons/facebook.svg) no-repeat center;
+        }
+
+        &:hover {
+          & > .social-icon {
+            background-image: url(../assets/icons/facebook-hover.svg);
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        & > .social-icon {
+          background: url(../assets/icons/discord.svg) no-repeat center;
+        }
+
+        &:hover {
+          & > .social-icon {
+            background-image: url(../assets/icons/discord-hover.svg);
+          }
+        }
+      }
+
+      &:nth-child(5) {
+        & > .social-icon {
+          background: url(../assets/icons/whatsapp.svg) no-repeat center;
+        }
+
+        &:hover {
+          & > .social-icon {
+            background-image: url(../assets/icons/whatsapp-hover.svg);
+          }
+        }
+      }
+
+      &:nth-child(6) {
+        & > .social-icon {
+          background: url(../assets/icons/mail.svg) no-repeat center;
+        }
+
+        &:hover {
+          & > .social-icon {
+            background-image: url(../assets/icons/mail-hover.svg);
+          }
+        }
+      }
+    }
+  }
+
+  & .more-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+
+    & > div {
+      text-align: left;
+      flex: 1;
+
+      & div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+    }
+
+    & h4 {
+      font: 700 1rem var(--font-family);
+      color: var(--text-title);
+      margin-bottom: 0.75rem;
+    }
+
+    & .link {
+      transition: color 300ms ease;
+    }
+  }
+
+  @media screen and (width >= 80rem) {
+    background-image: url(../assets/images/book-trace-background.png);
+    padding: 8rem 3rem 3rem;
+
+    & .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    & .more-links {
+      width: 19.5rem;
+      gap: 3.5rem;
+    }
+  }
+}
